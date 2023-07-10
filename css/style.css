@@ -1,0 +1,479 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/*----------------CSS Reset-------------------*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+/*------------------General-------------------------*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #272829;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+  }
+  
+  html::-webkit-scrollbar-track {
+    background: #111;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    background: #29d9d5;
+    border-radius: 5rem;
+  }
+
+a {
+    color: #149ddd;
+}
+
+a:hover {
+    color: #37b3ed;
+}
+
+/*-------------------Button---------------------------------*/
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 1.5rem;
+    background: #212431;
+    border-radius: .5rem;
+    color: #fff;
+    cursor: pointer;
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0 0 0 / 69%) 0px 26px 30px -10px, rgba(0 0 0 / 73%) 0px 16px 10px -10px;
+    transition-duration: 300ms;
+}
+
+.btn:hover {
+    border: 2px solid rgba(249, 249, 249, .8);
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+/*-------------------Header--------------------------------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 0 1.5rem;
+    background: #040b14;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    transition: all ease-in-out .5s;
+}
+
+.header.active {
+    left: 0;
+}
+
+header .profile img {
+    width: 120px;
+    display: block;
+    margin: 3rem auto;
+    border: .8rem solid #2c2f3f;
+    border-radius: 50%;
+}
+
+header .profile h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+header .profile h1 a {
+    color: #fff;
+}
+
+header .profile .social-links {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+header .profile .social-links a {
+    font-size: 1.8rem;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: .8rem 0;
+    margin-right: .4rem;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: .3s; 
+}
+
+header .profile .social-links a:hover {
+    background: #149ddd;
+    color: #fff;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+@media (max-width: 1199px) {
+    header {
+        left: -300px;
+    }
+    #main {
+        margin-left: 0;
+    }
+}
+
+
+
+/*-------------Navigation--------------------*/
+
+.nav-menu {
+    padding-top: 3rem;
+}
+
+.nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.nav-menu a i {
+    font-size: 2.4rem;
+    padding-right: 1.2rem;
+    color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active > a i,
+.nav-menu li:hover > a i {
+    color: #149ddd;
+}
+
+#menu-btn {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    font-size: 4rem;
+    transition: all .4s;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 99;
+    display: none;
+    color: #149ddd;
+}
+
+
+
+@media (max-width: 1199px) {
+    #menu-btn {
+        display: block;
+    }
+}
+
+
+
+
+
+/*-------------------Hero section-------------------------*/
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/cover-2.jpg') center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero:before {
+    content: "";
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 0 0 1rem 0;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 5.6rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 0, 0, .7);
+}
+
+#hero p {
+    color: #fff;
+    margin-bottom: 5rem;
+    font-size: 2.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/*------------Section ----------------------------*/
+
+section {
+    padding: 60px;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+.section-bg {
+    background: #f5f8fd;
+}
+
+.section-title {
+    padding-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    color: #173b6c;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 5rem;
+    height: .3rem;
+    background: #149ddd;
+    bottom: 0;
+    left: 0;
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+
+/*---------------------------About Section-----------*/
+
+.about .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.about .container .section-title p {
+    padding-top: 1rem;
+}
+
+.about .container .image {
+    flex: 1 1 25rem;
+}
+
+.about .container .image img {
+    width: 100%;
+}
+
+.about .container .content {
+    flex: 1 1 45rem;
+}
+
+.about .container .content .content-title {
+    font-size: 2rem;
+    margin: 1.7rem 0;
+    color: #173b6c;
+}
+
+
+.about .content .progress {
+    margin-top: 1rem;
+}
+
+.about .content .progress .bar {
+    max-width: 70rem;
+    padding: .5rem;
+    
+}
+
+.about .content .progress .bar h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    background: #149ddd;
+    border-radius: .5rem;
+}
+
+.about .content .progress .bar h3 span {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.about .content .progress .bar:nth-child(1) h3 {
+    width: 95%;
+}
+
+.about .content .progress .bar:nth-child(2) h3 {
+    width: 85%;
+}
+
+.about .content .progress .bar:nth-child(3) h3 {
+    width: 70%;
+}
+
+.about .content .progress .bar:nth-child(4) h3 {
+    width: 55%;
+}
+
+/*------------Education Section---------------*/
+
+.resume .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.resume .resume-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #050d18;
+}
+
+.resume .container .row {
+    flex: 1 1 40rem;
+}
+
+.resume .resume-item {
+    padding: 0 0 2rem 2rem;
+    margin-top: -.2rem;
+    border-left: .2rem solid #1f5297;
+}
+
+.resume .resume-item h4 {
+    line-height: 2.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #050d18;
+    margin-bottom: 1rem;
+}
+
+.resume .resume-item h5 {
+    font-size: 1.6rem;
+    background: #e4edf9;
+    padding: .5rem 1.5rem;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
+/*-----------portfolio section---------------------*/
+
+.portfolio .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+.portfolio .box-container .box {
+    padding: 1.5rem 0;
+}
+
+
+.portfolio .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-radius: .5rem;
+    border: 2px solid rgba(0, 0, 0, .6);
+}
+
+.portfolio .box-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.portfolio .box-container .box:hover .image img {
+    transform: scale(1.2);
+}
+
+.portfolio .box-container .box .box-text {
+    position: relative;
+    top: -2rem;
+    background: #222;
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.portfolio .box-container .box .box-text span {
+    margin: 0 1rem;
+    color: #149ddd;
+    font-family: "Poppins", sans-serif;
+}
+
+.portfolio .box-container .box h3 {
+    color: #212431;
+    padding: 1.5rem 0;
+}
+
+@media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }
